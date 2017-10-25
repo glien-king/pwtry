@@ -1,0 +1,39 @@
+/**
+ * main-box/sidebar-box
+ * page-header
+ * page-sidebar
+ * page-footer
+ */
+
+.main-box {
+    background-color: #fff;
+}
+
+@media (max-width: 767px) {
+    .main-box {
+        @include margin10;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-box {
+        padding: 45px 55px;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-box {
+        padding: 35px 45px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-box {
+        padding: 55px 65px;
+    }
+}
+
+.sidebar-box {
+    // background-color: #fff;
+}

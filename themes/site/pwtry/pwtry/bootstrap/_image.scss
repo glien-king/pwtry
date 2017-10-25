@@ -1,0 +1,17 @@
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-radius {
+    border-radius: 4px;
+}
+
+.img-thumbnail {
+    border: 1px solid $border-default;
+    border-radius: 4px;
+    padding: 4px;
+
+    background-color: $bg-default;
+
+    transition: all .2s ease-in-out;
+}

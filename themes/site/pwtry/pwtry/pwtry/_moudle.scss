@@ -1,0 +1,95 @@
+/**
+ * announce
+ * appcenter
+ * fourm
+ * like
+ * link
+ * manage
+ * medal
+ * message
+ * my
+ * profile
+ * report
+ * special
+ * tag
+ * task
+ * u
+ * vote
+ */
+
+/**
+ * src\applications\appcenter\service\srv\PwCssCompile.php
+ * src\service\design\srv\PwDesignService.php
+ */
+
+
+/**
+ * announce
+ */
+
+.core-announce-wrap {
+    overflow: hidden;
+
+    margin: 10px 0 0;
+    border-bottom: 1px dashed $border-default;
+    padding: 0;
+    height: 28px;
+}
+
+.core-announce {
+    li {
+        float: left;
+        overflow: hidden;
+
+        height: 28px;
+
+        line-height: 18px;
+    }
+    a {
+        margin-right: 10px;
+
+        color: #666;
+    }
+    span {
+        margin-right: 10px;
+
+        color: #999;
+    }
+}
+
+.announce-page {
+    dl {
+        border-bottom: 1px dashed $border-dark;
+    }
+    dt {
+        padding: 10px 0;
+
+        font-size: 14px;
+
+        color: #666;
+    }
+    dt:hover {
+        background-color: $bg-default;
+    }
+    .subject {
+        margin-right: 20px;
+    }
+    .time {
+        padding-left: 20px;
+    }
+    dd {
+        display: none;
+
+        padding: 0 0 10px;
+
+        line-height: 1.8;
+
+        color: #666;
+    }
+    dl.current dd {
+        display: block;
+    }
+    dl.current dt:hover {
+        background: none;
+    }
+}

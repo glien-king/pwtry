@@ -1,0 +1,198 @@
+.btn {
+    display: inline-block;
+    overflow: visible;
+
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    padding: 0 21px;
+    height: 34px;
+
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+
+    -webkit-transition: .15s ease-in-out;
+            transition: .15s ease-in-out;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.btn:focus,
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.disabled,
+.btn:disabled {
+    opacity: .65;
+
+    cursor: not-allowed;
+}
+
+.btn-default {
+    border-color: $border-default;
+
+    color: $gray-dark;
+    background-color: $bg-dark;
+}
+
+.btn-default:hover {
+    border-color: darken($border-default, 10%);
+
+    color: $gray-dark;
+    background-color: darken($bg-dark, 7.5%);
+}
+
+.btn-default.disabled,
+.btn-default:disabled {
+    border-color: $border-default;
+
+    background-color: $bg-dark;
+}
+
+.btn-default:active,
+.btn-default.active {
+    border-color: darken($border-default, 10%);
+
+    color: $gray-dark;
+    background-color: darken($bg-dark, 10%);
+}
+
+.btn-primary {
+    border-color: $border-primary;
+
+    color: #fff;
+    background-color: $bg-primary;
+}
+
+.btn-primary:hover {
+    border-color: darken($border-primary, 10%);
+
+    color: #fff;
+    background-color: darken($bg-primary, 7.5%);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    border-color: $border-primary;
+
+    background-color: $bg-primary;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    border-color: darken($border-primary, 10%);
+
+    color: #fff;
+    background-color: darken($bg-primary, 10%);
+}
+
+.btn-success {
+    border-color: $border-success;
+
+    color: #fff;
+    background-color: $bg-success;
+}
+
+.btn-success:hover {
+    border-color: darken($border-success, 10%);
+
+    color: #fff;
+    background-color: darken($bg-success, 7.5%);
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+    border-color: $border-success;
+
+    background-color: $bg-success;
+}
+
+.btn-success:active,
+.btn-success.active {
+    border-color: darken($border-success, 10%);
+
+    color: #fff;
+    background-color: darken($bg-success, 10%);
+}
+
+.btn-warning {
+    border-color: $border-warning;
+
+    color: #fff;
+    background-color: $bg-warning;
+}
+
+.btn-warning:hover {
+    border-color: darken($border-warning, 10%);
+
+    color: #fff;
+    background-color: darken($bg-warning, 7.5%);
+}
+
+.btn-warning.disabled,
+.btn-warning:disabled {
+    border-color: $border-warning;
+
+    background-color: $bg-warning;
+}
+
+.btn-warning:active,
+.btn-warning.active {
+    border-color: darken($border-warning, 10%);
+
+    color: #fff;
+    background-color: darken($bg-warning, 10%);
+}
+
+.btn-radius {
+    border-radius: 100px;
+}
+
+.btn-block {
+    display: block;
+
+    width: 100%;
+}
+
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+    width: 100%;
+}
+
+.btn-small {
+    height: 30px;
+
+    line-height: 28px;
+}
+
+.btn-big {
+    height: 38px;
+
+    font-size: 16px;
+    line-height: 36px;
+}
+
+.btn-height-small {
+    line-height: 30px;
+}
+
+.btn-height {
+    line-height: 34px;
+}
+
+.btn-height-big {
+    line-height: 38px;
+}

@@ -1,0 +1,112 @@
+.cc::after {
+    display: block;
+    clear: both;
+
+    content: "";
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.tal {
+    text-align: left !important;
+}
+
+.tac {
+    text-align: center !important;
+}
+
+.tar {
+    text-align: right !important;
+}
+
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+.text-hide {
+    border: 0;
+
+    font: 0/0 a;
+
+    color: transparent;
+    background-color: transparent;
+
+    text-shadow: none;
+}
+
+.text-primary {
+    color: $brand-primary;
+}
+
+a.text-primary:hover,
+a.text-primary:focus {
+    color: $brand-primary;
+}
+
+.text-success {
+    color: $brand-success;
+}
+
+a.text-success:hover,
+a.text-success:focus {
+    color: $brand-success;
+}
+
+.text-warning {
+    color: $brand-warning;
+}
+
+a.text-warning:hover,
+a.text-warning:focus {
+    color: $brand-warning;
+}
+
+.mb5 {
+    margin-bottom: 5px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb15 {
+    margin-bottom: 15px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb25 {
+    margin-bottom: 25px !important;
+}
+
+.mr5 {
+    margin-right: 5px !important;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.mr15 {
+    margin-right: 15px !important;
+}
+
+.mr20 {
+    margin-right: 20px !important;
+}
+
+.mr25 {
+    margin-right: 25px !important;
+}

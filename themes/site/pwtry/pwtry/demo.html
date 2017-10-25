@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link rel="stylesheet" href="../css/dev/bootstrap.css">
+    <style type="text/css">
+        .container,
+        .container-fluid {
+            background-color: #fff;
+        }
+        .grid-demo {
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        .grid-demo-dark {
+            background-color: #adb5bd;
+        }
+        .grid-demo-light {
+            background-color: #12b886;
+        }
+        /**
+         * 增加 font-icon
+         * 增加 pwtry
+         */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Reset</h3>
+        <div class="row">
+            <div class="col-3">
+                The <a href="#">a element</a> example
+                <br>The <b>b element</b> example
+                <br>The <code>code element</code> example
+                <br>The <del>del element</del> example
+                <br>The <em>em element</em> example
+                <br>The <i>i element</i> example
+                <br>The <mark>mark element</mark> example
+                <br>The <s>s element</s> example
+            </div>
+            <div class="col-3">
+                The <samp>samp element</samp> example
+                <br>The <small>small element</small> example
+                <br>The <span>span element</span> example
+                <br>The <strong>strong element</strong> example
+                <br>The <sub>sub element</sub> example
+                <br>The <sup>sup element</sup> example
+                <br>The <u>u element</u> example
+                <br>The <var>var element</var> example
+            </div>
+            <div class="col-6">
+                <figure>
+                    <figcaption>Figcaption content</figcaption>
+                </figure>
+                <br>
+                <address>
+                    The address element.
+                </address>
+                <br>
+                <blockquote>This is a short block quote, no paragraph tags!</blockquote>
+                <br>
+                <pre>This is a pre example, In one of the stars I shall be living. In one of them I shall be laughing. And so it will be as if all the stars were laughing, when you look at the sky at night.</pre>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <h1>This is a H1 heading</h1>
+                <h2>This is a H2 heading</h2>
+                <h3>This is a H3 heading</h3>
+                <h4>This is a H4 heading</h4>
+                <h5>This is a H5 heading</h5>
+                <h6>This is a H6 heading</h6>
+            </div>
+            <div class="col-6">
+                <h1>这是 H1 标题的测试</h1>
+                <h2>这是 H2 标题的测试</h2>
+                <h3>这是 H3 标题的测试</h3>
+                <h4>这是 H4 标题的测试</h4>
+                <h5>这是 H5 标题的测试</h5>
+                <h6>这是 H6 标题的测试</h6>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <h3>Unordered List</h3>
+                <ul>
+                    <li>list item</li>
+                    <li>list item</li>
+                    <li>list item</li>
+                    <li>list item</li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3>Ordered List</h3>
+                <ol>
+                    <li>list item</li>
+                    <li>list item</li>
+                    <li>list item</li>
+                    <li>list item</li>
+                </ol>
+            </div>
+            <div class="col-4">
+                <h3>Description list</h3>
+                <dl>
+                    <dt>Description name</dt>
+                    <dd>Description value</dd>
+                    <dd>Description value</dd>
+                    <dd>Description value</dd>
+                </dl>
+            </div>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Button</h3>
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-default" href="#">默认按钮</a>
+                <button class="btn btn-primary">主要按钮</button>
+                <button class="btn btn-success">成功按钮</button>
+                <button class="btn btn-warning">警告按钮</button>
+                <a class="btn btn-default disabled" href="#">默认按钮</a>
+                <button class="btn btn-primary" disabled>主要按钮</button>
+                <button class="btn btn-success" disabled>成功按钮</button>
+                <button class="btn btn-warning" disabled>警告按钮</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-default btn-small" href="#">默认按钮</a>
+                <button class="btn btn-primary btn-small">主要按钮</button>
+                <button class="btn btn-success">成功按钮</button>
+                <button class="btn btn-warning btn-big">警告按钮</button>
+                <a class="btn btn-default btn-small btn-radius" href="#">默认按钮</a>
+                <button class="btn btn-primary btn-small btn-radius">主要按钮</button>
+                <button class="btn btn-success btn-radius">成功按钮</button>
+                <button class="btn btn-warning btn-big btn-radius">警告按钮</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-3">
+                <a class="btn btn-default btn-block" href="#">Link</a>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary btn-block">Button</button>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-success btn-block">Button</button>
+            </div>
+            <div class="col-3">
+                <button class="btn btn-danger btn-block">Button</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <p><button class="pull-left btn btn-primary btn-small">Button</button><span class="btn-height-small">句子适配按钮的高度。</span></p>
+            </div>
+            <div class="col-4">
+                <p><button class="pull-left btn btn-primary">Button</button><span class="btn-height">句子适配按钮的高度。</span></p>
+            </div>
+            <div class="col-4">
+                <p><button class="pull-left btn btn-primary btn-big">Button</button><span class="btn-height-big">句子适配按钮的高度。</span></p>
+            </div>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Progress</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-1" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-1" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-2" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-2" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-3" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-3" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-4" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-4" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-5" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-5" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-6" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-6" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-7" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-7" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-8" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-8" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-9" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-9" style="width: 10%;text-align: center;">25</span>
+                </div>
+                <div class="progress-wrap cc">
+                    <span class="progress" style="float: left;width: 80%;"><span class="progress-10" style="width:75%;"></span></span>
+                    <span class="progress-percent" style="float: left;width: 10%;text-align: center;">25%</span>
+                    <span class="progress-bg progress-bg-10" style="width: 10%;text-align: center;">25</span>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Form</h3>
+        <form action="">
+            <div class="row">
+                <div class="col-3">
+                    <input class="input" type="text" placeholder=":focus" autofocus required>
+                </div>
+                <div class="col-3">
+                    <input class="input" type="text" placeholder="Some text...">
+                </div>
+                <div class="col-3">
+                    <input class="input" type="text" placeholder=":disabled" disabled>
+                </div>
+                <div class="col-3">
+                    <input class="input" type="text" placeholder=":disabled" value="Some text..." disabled>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-3">
+                    <textarea class="textarea" placeholder="Some text..."></textarea>
+                </div>
+                <div class="col-3">
+                    <select class="select">
+                        <option value="">Please select...</option>
+                        <option value="1">Option 01</option>
+                        <option value="2">Option 02</option>
+                    </select>
+                    <select class="select">
+                        <option>Option 01</option>
+                        <option>Option 02</option>
+                    </select>
+                    <select class="select" multiple>
+                        <option>Option 01</option>
+                        <option>Option 02</option>
+                        <option>Option 03</option>
+                        <option>Option 04</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input class="input" type="password" placeholder="Password">
+                    <input class="input" type="email" placeholder="name@domain.com">
+                    <input class="input" type="search" placeholder="Search...">
+                    <input class="input" type="tel" placeholder="+49 555 123456">
+                    <input class="input" type="url" placeholder="http://">
+                </div>
+                <div class="col-3">
+                    <label><input class="radio" type="radio" name="radio1" checked> A</label>
+                    <label><input class="radio" type="radio" name="radio1"> B</label>
+                    <label><input class="radio" type="radio" name="radio2" disabled> C</label>
+                    <label><input class="radio" type="radio" name="radio2" disabled checked> D</label>
+                    <br>
+                    <label><input class="checkbox" type="checkbox" checked> A</label>
+                    <label><input class="checkbox" type="checkbox"> B</label>
+                    <label><input class="checkbox" type="checkbox" disabled> C</label>
+                    <label><input class="checkbox" type="checkbox" disabled checked> D</label>
+                    <br>
+                    <label><input class="radio" type="radio" name="radio3" checked> 测试</label>
+                    <label><input class="radio" type="radio" name="radio3"> 测试</label>
+                    <label><input class="radio" type="radio" name="radio4" disabled> 测试</label>
+                    <label><input class="radio" type="radio" name="radio4" disabled checked> 测试</label>
+                    <br>
+                    <label><input class="checkbox" type="checkbox" checked> 测试</label>
+                    <label><input class="checkbox" type="checkbox"> 测试</label>
+                    <label><input class="checkbox" type="checkbox" disabled> 测试</label>
+                    <label><input class="checkbox" type="checkbox" disabled checked> 测试</label>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <input class="input form-width-1" type="text" placeholder="form-width-1">
+                    <input class="input form-width-3" type="text" placeholder="form-width-3">
+                    <input class="input form-width-5" type="text" placeholder="form-width-5">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <input class="input form-width-2 form-small" type="text" placeholder="form-width-2">
+                    <input class="input form-width-4" type="text" placeholder="form-width-4">
+                    <input class="input form-width-6 form-big" type="text" placeholder="form-width-6">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <fieldset>
+                        <legend>Legend</legend>
+                        <div>
+                            <div class="form-custom">
+                                <input type="file">
+                                <input class="input form-width-5" type="text" placeholder="Select file" disabled>
+                            </div>
+                            <button class="btn btn-default">Submit</button>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Table</h3>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-small table-line">
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-row">
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-big table-nob">
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                            <th>TABLE HEADING</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                        <tr>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                            <td>Table Data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div class="container">
+        <br>
+        <h3 class="mb15">Gird</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="grid-demo grid-demo-dark">100%</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-9">
+                <div class="grid-demo grid-demo-dark">75%</div>
+            </div>
+            <div class="col-3">
+                <div class="grid-demo grid-demo-light">25%</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <div class="grid-demo grid-demo-dark">50%</div>
+            </div>
+            <div class="col-6">
+                <div class="grid-demo grid-demo-light">50%</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-3">
+                <div class="grid-demo grid-demo-dark">25%</div>
+            </div>
+            <div class="col-3">
+                <div class="grid-demo grid-demo-light">25%</div>
+            </div>
+            <div class="col-3">
+                <div class="grid-demo grid-demo-dark">25%</div>
+            </div>
+            <div class="col-3">
+                <div class="grid-demo grid-demo-light">25%</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="grid-demo grid-demo-dark">移动：100%、桌面：60%</div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="grid-demo grid-demo-light">移动：50%、桌面：40%</div>
+            </div>
+            <div class="col-xs-6 col-md-12">
+                <div class="grid-demo grid-demo-dark">移动：50%、桌面：100%</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="grid-demo grid-demo-dark">嵌套 75% 之 50%</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="grid-demo grid-demo-light">嵌套 75% 之 50%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="grid-demo grid-demo-dark">25%</div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="container-fluid">
+        <br>
+        <h3 class="mb15">Gird-fluid</h3>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="grid-demo grid-demo-dark">25%</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="grid-demo grid-demo-light">25%</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="grid-demo grid-demo-dark">25%</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="grid-demo grid-demo-light">25%</div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>

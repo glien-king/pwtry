@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+	<application>
+	<name>pwtry</name>
+	<alias>pwtry</alias>
+	<version>1.0</version>
+	<pw-version>9.0.2</pw-version>
+	<charset>UTF-8</charset>
+	<type>style</type>
+	<style-type>site</style-type>
+	<description>A Theme For PHPwind 9.x</description>
+	<logo>images/preview.jpg</logo>
+	<website>http://www.xiaogupai.com</website>
+	<author-name>lcuncle</author-name>
+	<author-email>lcuncle@163.com</author-email>
+	<author-icon>
+	</author-icon>
+	</application>
+	</manifest>

@@ -22,6 +22,8 @@
         border: 1px solid $border-default;
         padding: 10px 15px;
         min-height: 21px;
+        word-wrap: break-word;
+    word-break: break-all;
     }
 }
 

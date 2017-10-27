@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/fresh.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 <style>
 .aPre{
 	cursor:url({@theme:images}/common/pre.cur),auto;
@@ -18,9 +18,9 @@
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:my/fresh/run}">我的关注</a><!--#if($currents != 'all'){#--><em>&gt;</em><a href="{@url:my/fresh/run?gid=$currents}">{$type[$currents]}</a><!--#}#-->
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:my/fresh/run}">我的关注</a><!--#if($currents != 'all'){#--><i class="fa fa-angle-right"></i><a href="{@url:my/fresh/run?gid=$currents}">{$type[$currents]}</a><!--#}#-->
 		</div>
 		<div class="main cc">
 			<div class="main_body">
@@ -46,7 +46,7 @@
 							<a href="" class="a_face J_insert_emotions" data-emotiontarget="#J_fresh_post_ta">表情</a><a href="javascript:;" id="" class="a_photo{@$allowUpload ? '' : ' dn'}">图片<span class="a_photo_flash"><span id="J_fresh_swfupload"></span></span></a>
 							</div>
 						</div>
-						
+
 						<!--版块选择-->
 						<div id="J_fresh_post_forum_wrap" tabindex="0" class="pop_select_forum" style="display:none;">
 							<a class="pop_close" href="#" id="J_fresh_forum_close">关闭</a>
@@ -83,7 +83,6 @@
 						</form>
 					</div>
 					<!--结束-->
-					<div style="width:638px;overflow:hidden;"><advertisement id='Common.Attention.Btm' sys='1'/></div>
 					<div class="box_wrap fresh_page">
 						<div class="fresh_nav">
 							<ul class="cc">
@@ -112,7 +111,7 @@
 					<pw-tpl id="fresh_bottom"/>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>
@@ -146,11 +145,11 @@ Wind.use('jquery', 'global', 'swfupload', 'ajaxForm', function(){
 		//不支持图片上传
 		$('a.a_photo').hide();
 	}
-	
+
 	Wind.js(GV.JS_ROOT +'pages/my/freshFast.js?v='+ GV.JS_VERSION);
-	
+
 	Wind.js(GV.JS_ROOT +'pages/common/freshRead.js?v='+ GV.JS_VERSION);
-	
+
 });
 </script>
 <pw-end/>

@@ -17,79 +17,75 @@
  * vote
  */
 
-/**
- * src\applications\appcenter\service\srv\PwCssCompile.php
- * src\service\design\srv\PwDesignService.php
- */
+@media (max-width: 767px) {
+    // background-color: #fff;
+}
 
 
 /**
  * announce
  */
 
-.core-announce-wrap {
+.announce-slide {
     overflow: hidden;
 
-    margin: 10px 0 0;
+    margin-bottom: 25px;
     border-bottom: 1px dashed $border-default;
-    padding: 0;
-    height: 28px;
-}
-
-.core-announce {
+    height: 35px;
     li {
-        float: left;
         overflow: hidden;
 
-        height: 28px;
+        height: 35px;
 
-        line-height: 18px;
-    }
-    a {
-        margin-right: 10px;
+        line-height: 35px;
+        i {
+            color: $brand-warning;
+        }
+        span {
+            float: right;
 
-        color: #666;
-    }
-    span {
-        margin-right: 10px;
-
-        color: #999;
+            color: $gray-light;
+        }
     }
 }
 
 .announce-page {
+    margin-right: -15px;
+    margin-left: -15px;
+    dl + dl {
+        border-top: 1px dashed $border-default;
+    }
     dl {
-        border-bottom: 1px dashed $border-dark;
-    }
-    dt {
-        padding: 10px 0;
+        dt {
+            padding: 10px 15px;
 
-        font-size: 14px;
+            cursor: pointer;
+            &:hover {
+                background-color: $bg-default;
+            }
+        }
+        dd {
+            display: none;
+        }
+        span {
+            float: right;
 
-        color: #666;
+            color: $gray-light;
+        }
     }
-    dt:hover {
-        background-color: $bg-default;
-    }
-    .subject {
-        margin-right: 20px;
-    }
-    .time {
-        padding-left: 20px;
-    }
-    dd {
-        display: none;
+    dl.current {
+        dt {
+            background-color: $bg-light;
+        }
+        dd {
+            display: block;
 
-        padding: 0 0 10px;
+            padding: 25px 15px;
 
-        line-height: 1.8;
-
-        color: #666;
-    }
-    dl.current dd {
-        display: block;
-    }
-    dl.current dt:hover {
-        background: none;
+            line-height: 1.75;
+            a {
+                color: $link-hover;
+            }
+        }
     }
 }

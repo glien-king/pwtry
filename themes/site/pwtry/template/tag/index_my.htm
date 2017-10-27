@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/tag.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,20 +10,17 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:tag/index/run}">话题</a><em>&gt;</em><a href="{@url:tag/index/my}">我关注的话题</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/run}">话题</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/my}">我关注的话题</a>
 		</div>
 		<pw-tpl id="first_segment"/>
-		<nav>
 			<div class="tag_nav">
 				<ul class="cc">
 					<li><a href="{@url:tag/index/run}">热门话题</a></li>
 					<li class="current"><a href="{@url:tag/index/my}">我关注的话题</a></li>
 				</ul>
 			</div>
-		</nav>
 		<div class="main cc">
-			<advertisement id='Common.Topic.Top' sys='1'/>
 			<div class="main_body">
 				<div class="main_content">
 					<pw-tpl id="myTagPage_segment"/>
@@ -37,7 +34,7 @@
 						</div>
 						<div class="tag_lists_wrap">
 						<!--# if ($v){ #-->
-							<!--# foreach($v as $k2=>$v2){ 
+							<!--# foreach($v as $k2=>$v2){
 								if (!$v2) continue;
 							#-->
 							<dl class="cc">
@@ -84,9 +81,8 @@
 				<div>
 					<page tpl="TPL:common.page" page="$page" per="$perpage" count="$count" url="/tag/index/my" />
 				</div>
-				<advertisement id='Common.Topic.Btm' sys='1'/>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 				<template source='TPL:tag.index_my_model' load='true' />
 				<template source='TPL:tag.index_hot_model' load='true' />
@@ -98,10 +94,10 @@
 <script>
 Wind.use('jquery', 'global', function(){
 	var unfollow_btn = $('a.J_unfollow');
-	
+
 	unfollow_btn.on('click', function(e){
 		e.preventDefault();
-		
+
 		var $this = $(this);
 
 		$.getJSON($this.attr('href'), function(data){
@@ -123,7 +119,7 @@ Wind.use('jquery', 'global', function(){
 			}
 		});
 	});
-	
+
 	Wind.use(GV.JS_ROOT +'pages/tag/tag_index.js?v=' + GV.JS_VERSION);
 });
 </script>

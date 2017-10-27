@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/like.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,8 +10,8 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:like/like/run}">喜欢</a><em>&gt;</em><a href="{@url:like/mylike/run}">我的喜欢</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:like/like/run}">喜欢</a><i class="fa fa-angle-right"></i><a href="{@url:like/mylike/run}">我的喜欢</a>
 		</div>
 		<div class="like_nav">
 			<ul class="cc">
@@ -86,7 +86,7 @@
 																$_sbtagname .= $_sbtagname ? ','. $tagLists[$tag]['tagname'] : $tagLists[$tag]['tagname'] ;
 															}
 														#-->
-														
+
 														<span class="J_group_names" title="{@Pw::substrs($_sbtagname,100)}">
 														{@Pw::substrs($_sbtagname, 5)}
 														</span>
@@ -115,9 +115,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
-			
+
 				<div class="box_wrap">
 					<h2 class="box_title">我的喜欢分类</h2>
 					<div class="side_cate_list">
@@ -131,19 +131,19 @@
 						<a href="" class="add" id="J_creat_group_side">创建新分类</a>
 					</div>
 				</div>
-			
+
 				<div class="box_wrap">
 					<h2 class="box_title">热门喜欢</h2>
 					<div class="like_hot_list">
 						<ul>
 						<!--# foreach ($hotBrand as $list){ #-->
-							<li><a href="{@url:bbs/read/run?tid=$list['fromid']}">{$list['subject']}</a><span class="num">{$list['counts']}</span></li>         
+							<li><a href="{@url:bbs/read/run?tid=$list['fromid']}">{$list['subject']}</a><span class="num">{$list['counts']}</span></li>
 						<!--# } #-->
 						</ul>
 					</div>
 				</div>
 			</div>
-<!--===========添加分类弹窗=============--> 
+<!--===========添加分类弹窗=============-->
 	<div id="J_tag_pop" class="core_pop_wrap" style="display:none;">
 		<div class="core_pop">
 			<div class="pop_like_sort">
@@ -188,7 +188,7 @@
 <script>
 var  GRROUP_DATA = '{@$likeJson|json}';
 Wind.use('jquery', 'global', function(){
-	
+
 	var my_like = $('#J_side_group_list');
 	$('#J_group_check_ul').data({
 		'saveList' : function(elem, type, id){
@@ -201,7 +201,7 @@ Wind.use('jquery', 'global', function(){
 			}, function(data){
 				Wind.Util.ajaxMaskRemove();
 				if(data.state === 'success') {
-					
+
 				}else if(data.state === 'fail') {
 					Wind.Util.resultTip({
 						error : true,
@@ -223,7 +223,7 @@ Wind.use('jquery', 'global', function(){
 					var _data = data.data;
 					creat_wrap.remove();
 					btn.show();
-					
+
 					//所有列表写入新创建分组
 					$('div.J_group_check_list > ul').append('<li><label><input type="checkbox" data-id="'+ _data.id +'" data-value="'+ _data.name +'" class="J_group_name">'+ _data.name +'</label></li>');
 
@@ -291,7 +291,7 @@ Wind.use('jquery', 'global', function(){
 
 	Wind.js(GV.JS_ROOT +'pages/common/checkListGroup.js?v='+ GV.JS_VERSION);
 
-	
+
 	//取消喜欢
 	$('a.J_unlike').on('click', function(e){
 		e.preventDefault();
@@ -319,9 +319,9 @@ Wind.use('jquery', 'global', function(){
 				});
 			}
 		}, 'json');
-		
+
 	});
-	
+
 });
 </script>
 <pw-end/>

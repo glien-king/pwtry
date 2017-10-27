@@ -1,9 +1,5 @@
-<!--#if ($site_info_notice = Wekit::C('site','info.notice')) {#-->
-<style>.header_wrap{top:29px;}body{padding-top:75px;}</style><div id="notice">{$site_info_notice}</div>
-<!--#}#-->
-<header class="header_wrap">
-	<div id="J_header" class="header cc">
-		<div class="logo">
+<header class="header_wrap header cc" id="J_header">
+		<div class="pull-left logo">
 			<a href="{@url:}">
 				<!--# if($__css = Wekit::C('site', 'css.logo')) { #-->
 				<!--后台logo上传-->
@@ -16,7 +12,23 @@
 		<nav class="nav_wrap">
 			<div class="nav">
 				<ul>
-					<i class="fa fa-home"></i>
+					<!--# $nav = Wekit::load('SRV:nav.bo.PwNavBo');
+		  $nav->setRouter();
+		  $currentId =  '';
+		   $main = $child = array();
+		  if ($nav->isForum()) $nav->setForum($pwforum->foruminfo['parentid'], $fid, $tid);
+		  $main = $nav->getNavFromConfig('main', true);
+		  foreach($main as $key=>$value){
+			if ($value['current']) {
+				$current = 'current';
+				$currentId = $key;
+			} else {
+				$current = '';
+			}
+			$value['child'] && $child[$key] = $value['child'];
+		  #-->
+					<li class="{$current}">{$value['name']|html}</li>
+	<!--# } #-->
 
 				</ul>
 			</div>
@@ -29,7 +41,6 @@
 			</form>
 		</div>
 		<template source="TPL:common.header_login" load="true" />
-	</div>
 </header>
 <!--#
 if ($child) {
@@ -49,4 +60,3 @@ foreach ($child as $ck => $cv) {
 		</ul>
 	</div>
 <!--#}} #-->
-<div class="tac"><advertisement id='Site.NavBanner' sys='1'/></div>

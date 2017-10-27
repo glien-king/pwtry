@@ -2,15 +2,15 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/fans.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:my/friend/run}">找人</a><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:my/friend/run}">找人</a><i class="fa fa-angle-right"></i>
 			<a href="{@url:my/friend/friend}">可能认识</a>
 		</div>
 		<div class="main cc">
@@ -27,15 +27,15 @@
 						</div>
 						<!--# if ($userList) { #-->
 						<div class="fans_list" id="J_fans_page">
-							<!--# 
+							<!--#
 							if ($loginUser->info['recommend_friend']) {
 								$pFriends = unserialize($loginUser->info['recommend_friend']);
-								
+
 							}
-							foreach ($userList as $key => $value) { 
+							foreach ($userList as $key => $value) {
 								$birthday = $value['byear'] ? '生日：' . $value['byear'] . '年'.$value['bmonth'].'月'.$value['bday'].'日' : '';
 								$profile = $value['profile'] ? '  自我介绍：'.$value['profile'] : '';
-								
+
 								if (isset($pFriends[$key])) {
 									$tmp = array();
 									foreach($pFriends[$key]['sameUser'] as $sk => $su){
@@ -76,12 +76,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>
 	</div>
-	
+
 <template source='TPL:common.footer' load='true' />
 <script>
 var URL_UNFOLLOW = "{@url:my/follow/delete/}",

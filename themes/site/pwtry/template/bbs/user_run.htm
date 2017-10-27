@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/forum.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,8 +10,8 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			{@$headguide|html}<em>&gt;</em><a href="{@url:bbs/user/run?fid=$fid}">会员</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			{@$headguide|html}<i class="fa fa-angle-right"></i><a href="{@url:bbs/user/run?fid=$fid}">会员</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
@@ -31,7 +31,6 @@
 						</ul>
 					</div>
 					<div class="box_wrap thread_page">
-					<nav>
 						<div class="content_nav" id="hashpos_ttype">
 							<ul class="cc">
 								<li><a href="{@url:bbs/thread/run?fid=$fid}">全部</a></li>
@@ -39,7 +38,6 @@
 								<li class="current"><a href="{@url:bbs/user/run?fid=$fid}">会员</a></li>
 							</ul>
 						</div>
-					</nav>
 						<div class="thread_uesr_list">
 							<h2><span>共<em id="J_user_count">{$totalJoin}</em>个会员</span>最新加入本版块的会员</h2>
 							<!--# if ($joinUser) { #-->
@@ -86,7 +84,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>

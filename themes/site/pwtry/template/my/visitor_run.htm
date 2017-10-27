@@ -2,15 +2,15 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/fans.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:my/visitor/run}">访问脚印</a><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:my/visitor/run}">访问脚印</a><i class="fa fa-angle-right"></i>
 			<a href="{@url:my/visitor/run}">谁看过我</a>
 		</div>
 		<div class="main cc">
@@ -41,7 +41,7 @@
 										关注<a href="{@url:space/follows/run?uid=$value['uid']}">{$value['follows']}</a><span>|</span>粉丝<a href="{@url:space/fans/run?uid=$value['uid']}">{$value['fans']}</a><span>|</span>帖子<a href="{@url:space/thread/run?uid=$value['uid']}">{$value['postnum']}</a>
 									</div>
 									<div class="action">访问时间：<span class="time">{@Pw::time2str($visitors[$value['uid']], 'auto')}</span></div>
-									<!--# if ($loginUser->uid != $value['uid']) { 
+									<!--# if ($loginUser->uid != $value['uid']) {
 										$isfan = Pw::inArray($value['uid'],array_keys((array)$fans)) ? 'true' : 'false';
 									#-->
 									<div class="attribute">
@@ -57,7 +57,7 @@
 								</dd>
 							</dl>
 							<!--# } #-->
-							
+
 						</div>
 						<!--# } elseif ($lastPostUser) { #-->
 							<div class="nofollow_list"><div class="hd">啊哦，太没人气了吧，<a href="{@url:space/index/run?uid=$lastPostUser}" target="_blank">随便看看</a>争取点人气！</div></div>
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>

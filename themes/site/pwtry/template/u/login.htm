@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' suffix='htm' />
-<link href="{@theme:css}/register.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
@@ -89,7 +89,7 @@ $_errMsg = '为保证帐户安全，请重新登录';
 </div>
 <script>
 Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
-	
+
 	//聚焦时默认提示
 	var focus_tips = {
 		username : '{$loginWay}',
@@ -262,7 +262,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 		},
 		submitHandler:function(form) {
 			var btn = $(form).find('button:submit');
-			
+
 			$(form).ajaxSubmit({
 				dataType : 'json',
 				beforeSubmit : function(){
@@ -271,7 +271,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 				},
 				success : function(data, statusText, xhr, $form) {
 					if(data.state === 'success') {
-					
+
 						//是否需要设置验证问题
 						if(data.message.check) {
                             data.message.check.url=(data.message.check.url).replace(/&amp;/gm,'&');
@@ -296,7 +296,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 						}else{
 							window.location.href = decodeURIComponent(data.referer);
 						}
-						
+
 					}else if(data.state === 'fail'){
                         //刷新验证码
 						$('#J_verify_update_a').click();
@@ -307,7 +307,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 							//回答安全问题
 							return;
 						}
-						
+
 						if(RegExp('答案').test(data.message)) {
 							//配合ignoreRepeat 处理问题答案不修改 再次验证
 							$('#J_u_login_tip_answer').html('<span for="J_login_answer" generated="true" class="tips_icon_error">'+ data.message +'</span>');
@@ -320,7 +320,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 								follow : true
 							});
 						}
-						
+
 					}
 				}
 			});

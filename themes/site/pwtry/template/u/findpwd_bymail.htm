@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' suffix='htm' />
-<link href="{@theme:css}/register.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
@@ -62,7 +62,7 @@
 Wind.use('jquery', 'global', 'validate', 'emailAutoMatch', function(){
 	var bymail_form = $("#J_bymail_form");
 	bymail_form.find('input:text:first').focus();
-	
+
 	bymail_form.validate({
 		errorPlacement: function(error, element) {
 			//错误提示容器

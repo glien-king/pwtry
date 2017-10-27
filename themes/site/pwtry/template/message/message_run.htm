@@ -2,15 +2,15 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/message.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:message/message/run}">消息</a><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:message/message/run}">消息</a><i class="fa fa-angle-right"></i>
 			<a href="{@url:message/message/run}">私信</a>
 		</div>
 		<div class="main cc">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>
@@ -80,7 +80,7 @@ Wind.use('jquery', 'global', 'dialog', function(){
 			window.location.href = $(this).find('a.J_tragger').attr('href');
 		};
 	});
-	
+
 	//选择后提交
 	var unread_count = $('#J_unread_count'),
 		checkbox = $('input.J_check_all, input.J_check')
@@ -92,7 +92,7 @@ Wind.use('jquery', 'global', 'dialog', function(){
 			href = $this.prop('href'),
 			checked = $('input.J_check:checked'),
 			ids_arr = [];
-			
+
 		//ids数组
 		$.each(checked, function(i, o){
 			ids_arr.push($(this).val());
@@ -152,7 +152,7 @@ Wind.use('jquery', 'global', 'dialog', function(){
 
 						check_op.css('visibility', 'hidden');
 						checkbox.removeAttr('checked');
-						
+
 						unReadCount(checked.parents('.J_notice_item').find('a.J_unread'), unread_count);
 					}else if( data.state === 'fail' ) {
 						Wind.Util.resultTip({
@@ -163,7 +163,7 @@ Wind.use('jquery', 'global', 'dialog', function(){
 				}
 			});
 		}
-		
+
 	});
 
 	function unReadCount(items, count){
@@ -180,16 +180,16 @@ Wind.use('jquery', 'global', 'dialog', function(){
 		}else{
 			count.text(result);
 		}
-						
+
 		items.remove();
 
 		/*Wind.Util.resultTip({
 			msg : '操作成功'
 		});*/
 	}
-	
+
 	Wind.js(GV.JS_ROOT +'pages/message/message_index.js?v=' + GV.JS_VERSION);
-	
+
 });
 </script>
 </body>

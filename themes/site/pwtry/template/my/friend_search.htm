@@ -2,15 +2,15 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/fans.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:my/friend/run}">找人</a><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:my/friend/run}">找人</a><i class="fa fa-angle-right"></i>
 			<a href="{@url:my/friend/search}">查找关注</a>
 		</div>
 		<div class="main cc">
@@ -59,7 +59,7 @@
 							</ul>
 						</div>
 						<div class="fans_list">
-							<!--# foreach ($userList as $key => $value) { 
+							<!--# foreach ($userList as $key => $value) {
 							#-->
 							<dl class="cc J_friends_items">
 								<dt><a data-uid="{$value['uid']}" class="J_user_card_show" href="{@url:space/index/run?uid=$value['uid']}"><img class="J_avatar" src="{@Pw::getAvatar($value['uid'], 'small')}" data-type="small" width="50" height="50" alt="{$value['username']}" /></a>
@@ -104,7 +104,7 @@
 					<!--# } #-->
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>

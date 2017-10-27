@@ -2,20 +2,19 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/vote.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="">投票</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="">投票</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
 				<div class="main_content">
 					<div class="box_wrap vote_page">
-					<nav>
 						<div class="content_nav">
 							<ul>
 								<li><a href="index.php?m=vote&c=hot">热门投票</a></li>
@@ -29,10 +28,9 @@
 								<li class="line"></li><li class="current"><a href="{@url:vote/my/create}">我发起的</a></li>
 							</ul>
 						</div>
-					</nav>
 						<div class="vote_list">
 
-<!--# if ($total) { 
+<!--# if ($total) {
 foreach($pollInfo as $value) {
 #-->
 <template source='TPL:vote.listcommon' load='true' />
@@ -46,13 +44,13 @@ foreach($pollInfo as $value) {
 <!--# } #-->
 
 </div>
-<!--# } #-->				
+<!--# } #-->
 							<div><page tpl='TPL:common.page' page='$page' per='$perpage' count='$total' url='vote/my/create' /></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 				<template source='TPL:vote.sidebar' load='true' />
 			</div>
@@ -100,9 +98,9 @@ Wind.use('jquery', 'global', function(){
 			}
 		});
 	}
-	
-	
-	
+
+
+
 });
 
 

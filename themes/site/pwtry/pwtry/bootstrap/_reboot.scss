@@ -226,7 +226,7 @@ a:hover {
 a {
     text-decoration: none;
 
-    color: $gray-dark;
+    color: $link-color;
 
     cursor: pointer;
 }
@@ -234,7 +234,7 @@ a {
 a:hover {
     text-decoration: none;
 
-    color: $brand-primary;
+    color: $link-hover;
 }
 
 pre,

@@ -1,7 +1,7 @@
 <hook-action name="area" args="field,fieldinfo">
 	<dl>
 		<dt><label>{$fieldinfo['title']}：</label></dt>
-		<dd class="J_region_set"><span class="must_red">*</span>
+		<dd class="J_region_set">
 			<div class="reg_ddtext">
 				<span class="J_region_list">
 				<span class="J_province mr5" data-id=""></span><span class="J_city mr5" data-id=""></span><span class="J_district mr5" data-id=""></span>
@@ -17,7 +17,7 @@
 <hook-action name="input" args="field,fieldinfo">
 	<dl>
 		<dt><label>{$fieldinfo['title']}：</label></dt>
-		<dd><span class="must_red">*</span>
+		<dd>
 			<input name="{$field}" type="text" class="input length_4" value="">
 		</dd>
 		<dd id="J_reg_tip_{$field}" class="dd_r"></dd>

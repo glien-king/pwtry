@@ -2,18 +2,17 @@
 <html>
 <head>
 	<template source='TPL:common.head' load='true' />
-	<link href="{@theme:css}/post.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
 			{@$headguide|html}
 		</div>
 		<form method="post" id="mainForm" name="FORM" action="{@WindUrlHelper::createUrl('bbs/post/' . $do . '/?_json=1&fid=' . $fid)|url}" enctype="multipart/form-data">
 		<div class="box_wrap post_page">
-			<nav>
 				<div class="content_nav">
 					<ul id="tabTypeHead">
 					<!--# if ($action == 'reply') { #-->
@@ -27,7 +26,6 @@
 					<!--# } #-->
 					</ul>
 				</div>
-			<nav>
 			<!--# $draftCount = Wekit::load('draft.PwDraft')->countByUid($loginUser->uid); #-->
 			<div class="post_content">
 				<a id="J_draft_lis_btn" href="{@url:bbs/draft/myDrafts}" class="my_drafts">草稿箱<span class="red" style="<!--# if (!$draftCount) { #-->display:none;<!--# } #-->">(<em id="J_draft_count">{$draftCount}</em>)</span></a>
@@ -330,7 +328,7 @@ Wind.use('jquery', 'global', 'ajaxForm', 'dialog', function() {
 					$.post($this.attr('href'), function(data){
 						if(data.state === 'success') {
 							$this.parent('li').remove();
-							
+
 							var c = parseInt(draft_count.text());
 							draft_count.text(c-1);
 							if(c <= 1) {
@@ -392,7 +390,7 @@ var forceTopic = '{$forceTopic}';//是否强制主题分类，1强制
 /*
  * 提交
 */
-	var word_tpl = '<div class="pop_sensitive"><div class="pop_top J_drag_handle"><a href="#" class="pop_close J_close">关闭</a><strong>提示</strong></div><div class="pop_cont"><div class="not_content_mini" id="J_word_tip"></div></div><div class="pop_bottom" id="J_word_bototm"></div></div>',
+	var word_tpl = '<div class="pop_sensitive"><div class="pop_top J_drag_handle"><a href="#" class="pop_close J_close">关闭</a><strong>提示</strong></div><div class="pop_cont"><div class="" id="J_word_tip"></div></div><div class="pop_bottom" id="J_word_bototm"></div></div>',
 			needcheck = ('{$needcheck}' == '1') ? true : false,		//是否审核
 			post_btn =  $('#J_post_sub');							//提交按钮
 

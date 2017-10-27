@@ -2,20 +2,19 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/vote.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="">投票</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="">投票</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
 				<div class="main_content">
 					<div class="box_wrap vote_page">
-					<nav>
 						<div class="content_nav">
 							<ul>
 								<li><a href="{@url:vote/hot/run}">热门投票</a></li>
@@ -29,9 +28,8 @@
 								<li class="line"></li><li class="current"><a href="{@url:vote/ta/create}">Ta发起的</a></li>
 							</ul>
 						</div>
-					</nav>
 						<div class="vote_list">
-							<!--# if ($total) { 
+							<!--# if ($total) {
 							foreach($pollInfo as $value){ #-->
 							<template source='TPL:vote.listcommon' load='true' />
 							<!--# }} else { #-->
@@ -61,7 +59,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 				<template source='TPL:vote.sidebar' load='true' />
 			</div>
@@ -72,7 +70,7 @@
 <script>
 Wind.use('jquery', 'global', 'ajaxForm', function(){
 	Wind.js(GV.JS_ROOT +'pages/vote/vote_index.js?v=' + GV.JS_VERSION);
-	
+
 	/*
 	 * 无关注
 	*/
@@ -112,7 +110,7 @@ Wind.use('jquery', 'global', 'ajaxForm', function(){
 			}
 		}
 	});
-	
+
 });
 </script>
 </body>

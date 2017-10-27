@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/style.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body {@$space->space['backbround']|html}>
 <div class="wrap">
@@ -44,7 +44,7 @@
 								#-->
 									<a href="{@url:my/follow/add}" class="core_follow J_space_fans J_qlogin_trigger" data-followed="{$isfan}" data-uid="{$value['uid']}">加关注</a>
 								<!--# } #-->
-								
+
 							</div>
 						</dd>
 					</dl>
@@ -75,7 +75,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 	Wind.js(GV.JS_ROOT +'pages/space/space_index.js?v='+ GV.JS_VERSION);
 
 <!--# if ($fans) { #-->
-	
+
 	//关注 取消
 	var lock = false;
 	$('a.J_space_fans').on('click', function(e){
@@ -128,7 +128,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 			Wind.Util.quickLogin();
 			return;
 		}
-		
+
 		var $this = $(this);
 		Wind.Util.ajaxMaskShow();
 		$.post(this.href, {
@@ -151,11 +151,11 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 				});
 			}
 		}, 'json');
-		
+
 	});
 
 <!--# } #-->
-	
+
 });
 </script>
 </body>

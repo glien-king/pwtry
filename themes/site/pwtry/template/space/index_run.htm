@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/style.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 <style>
 .aPre{
 	cursor:url({@theme:site.images}/common/pre.cur),auto;
@@ -19,7 +19,7 @@
 	<template source='TPL:space.common.nav' load='true' />
 	<div class="cc">
 		<div class="space_content" id="J_feed_lists">
-			<!--# 
+			<!--#
 				$perpage = 20;
 				list($count, $fresh) = $space->model('fresh',$perpage, $page);
 				if (!$fresh) {
@@ -54,19 +54,19 @@
 							</div>
 							<!--# } #-->
 							<div class="J_content_all" style="display:none;"></div>
-							<!--# if ($value['pic']) { 
+							<!--# if ($value['pic']) {
 									$_picCount = count($value['pic']);
 									$k = 0;
 							#-->
 							<div class="photo">
 								<ul class="cc J_gallery_list">
-									<!--# foreach ($value['pic'] as $v) { 
+									<!--# foreach ($value['pic'] as $v) {
 										$_isDisplay = $k++ >= 4 ? 'dn' : '';
 									#-->
 									<li class="fl J_gallery_items  {@$_isDisplay}"><a href="#" data-big="{@Pw::getPath($v['path'])}"><img onerror="this.onerror=null;this.className='J_error';" width="100" height="100" src="{@Pw::getPath($v['path'], $v['ifthumb'])}" /></a></li>
 									<!--# } #-->
 									<!--#if ($_picCount > 4) {#--><li>共{$_picCount}张图片</li><!--#}#-->
-									<!-- 
+									<!--
 									<li style="background:url({@theme:images}/preview.jpg) center center no-repeat;width:160px;"></li>
 									<li style="background:url({@theme:images}/preview.jpg) center center no-repeat;width:185px;"></li> -->
 									<!-- <li>共20张图，1个附件</li> -->
@@ -79,7 +79,7 @@
 										<em>◆</em>
 										<span>◆</span>
 									</div>
-									
+
 									<!--# if ($value['quote']['subject']) { #-->
 									<div class="title"><a href="{@url:space/index/run?uid=$value['quote']['created_userid']}" class="name" target="_blank">{$value['quote']['created_username']}</a>：
 									<a href="{@url:bbs/read/run?tid=$value['quote']['tid']}" class="subject" target="_blank">{$value['quote']['subject']}</a>
@@ -90,7 +90,7 @@
 										<span class="descrip">{$value['quote']['content']|html}</span>
 									</div>
 									<!--# } #-->
-									
+
 									<div class="info">
 										<!--# if($loginUser->uid) { #-->
 										<span class="right"><!-- <a href="#">喜欢(135)</a><i>|</i> --><a href="{$value['quote']['url']}">回复({$value['quote']['replies']})</a></span>
@@ -133,7 +133,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 	$('#J_feed_lists').on('click', 'a.J_fresh_emotion', function(e){
 		e.preventDefault();
 		insertEmotions($(this), $($(this).data('emotiontarget')));
-	}); 
+	});
 });
 </script>
 </body>

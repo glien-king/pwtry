@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/tag.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,8 +10,8 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:tag/index/run}">话题</a><em>&gt;</em><a href="{@url:tag/index/view?name=$tag['tag_name']}">{$tag['tag_name']}</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/run}">话题</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/view?name=$tag['tag_name']}">{$tag['tag_name']}</a>
 		</div>
 		<pw-tpl id="myTagPage_segment"/>
 		<div class="main cc">
@@ -75,7 +75,7 @@
 					<!--# } else { #-->
 						<!--# if ($contents) { #-->
 						<div class="tag_lists_wrap" id="J_tag_feed_lists">
-							<!--# foreach ($contents as $key => $value) { 
+							<!--# foreach ($contents as $key => $value) {
 								if (!$value['content']) continue;
 							#-->
 							<dl class="cc">
@@ -86,7 +86,7 @@
 									<a href="{@url:tag/index/doshield?id=$tag['tag_id']&type_id=$value['type_id']&param_id=$value['param_id']&ifcheck=0}" class="shield J_tag_shield" title="将该帖移出这个话题">屏蔽</a>
 										<!--# } else { #-->
 									<a href="{@url:tag/index/doshield?id=$tag['tag_id']&type_id=$value['type_id']&param_id=$value['param_id']&ifcheck=1}" class="shield J_tag_shield" title="取消屏蔽">取消屏蔽</a>
-										<!--# } #-->	
+										<!--# } #-->
 									<!--# } #-->
 									<div class="content">
 										<a href="{@url:space/index/run?uid=$value['created_userid']}" class="name J_user_card_show" data-uid="{$value['created_userid']}">{$value['created_username']}</a>：
@@ -118,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 				<template source='TPL:tag.index_hot_model' load='true' />
 				<template source='TPL:tag.index_my_model' load='true' />
@@ -130,7 +130,7 @@
 <script>
 var URL_ADD = '{@url:/tag/index/attention?type=add}',	//关注
 	URL_DEL = '{@url:/tag/index/attention?type=del}';	//取消关注
-	
+
 Wind.use('jquery', 'global', function(){
 
 <!--# if ($loginUser->isExists()) { #-->
@@ -198,14 +198,14 @@ Wind.use('jquery', 'global', function(){
 			$(this).removeClass('current');
 		});
 	}
-	
+
 
 <!--# } #-->
 
 	//阅读全部
 	var tag_excerpt_part = $('#J_tag_excerpt_part'),
 		tag_excerpt_ta = $('#J_tag_excerpt_ta');
-		
+
 	$('#J_show_more').on('click', function(e){
 		e.preventDefault();
 		var $this = $(this),
@@ -213,10 +213,10 @@ Wind.use('jquery', 'global', function(){
 			type = $this.data('type'),
 			anti_type = (type === 'open' ? 'close' : 'open'),
 			anti_text = (type === 'open' ? '收起↑' : '阅读全部↓');
-		
+
 		if(type === 'open') {
 			//阅读全部
-			
+
 			if(tag_excerpt_all.length) {
 				//已经有html
 				tag_excerpt_all.show();
@@ -224,18 +224,18 @@ Wind.use('jquery', 'global', function(){
 			}else{
 				tag_excerpt_part.hide().before(tag_excerpt_ta.text());
 			}
-			
+
 		}else{
 			tag_excerpt_all.hide();
 			tag_excerpt_part.show();
 			$this.data('type', 'open');
 		}
-		
+
 		//修改文案
 		$this.data('type', anti_type).text(anti_text);
-		
+
 	});
-	
+
 	//屏蔽
 	$('a.J_tag_shield').on('click', function(e){
 		e.preventDefault();
@@ -263,9 +263,9 @@ Wind.use('jquery', 'global', function(){
 			}
 		}, 'json');
 	});
-	
+
 	Wind.use(GV.JS_ROOT +'pages/tag/tag_index.js?v=' + GV.JS_VERSION);
-	
+
 });
 </script>
 <pw-end/>

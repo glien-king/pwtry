@@ -2,14 +2,14 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/message.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:message/message/run}">消息</a><em>&gt;</em><a href="{@url:message/message/run}">私信</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:message/message/run}">消息</a><i class="fa fa-angle-right"></i><a href="{@url:message/message/run}">私信</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
@@ -18,7 +18,7 @@
 					<div class="box_wrap message_page">
 							<template source='TPL:message.message_header' load='true' />
 							<div class="notification_center">
-							<!--# if ($messages) { 
+							<!--# if ($messages) {
 								Wind::import('LIB:ubb.PwUbbCode');
 							#-->
 								<dl class="hd cc">
@@ -26,7 +26,7 @@
 										找到"<span class="red">{$args['keyword']}</span>"相关结果 <span class="red">{$count}</span> 个
 									</dd>
 								</dl>
-								<!--# foreach ($messages as $value) { 
+								<!--# foreach ($messages as $value) {
 									$value['created_time'] = Pw::time2str($value['created_time'], 'auto');
 									$value['content'] = str_replace ( $args[keyword], '<span class="red">' . $args[keyword] . '</span>', $value['content'] );
 									$value['content'] = PwUbbCode::parseEmotion($value['content']);
@@ -51,7 +51,7 @@
 						</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>

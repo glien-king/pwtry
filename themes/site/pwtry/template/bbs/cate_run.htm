@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/forum.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,8 +10,8 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			{@$headguide|html}<!--# if ($tab == 'digest') { #--><em>&gt;</em><a href="{@url:bbs/cate/run?fid=$fid&tab=digest}">精华</a><!--#}#-->
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			{@$headguide|html}<!--# if ($tab == 'digest') { #--><i class="fa fa-angle-right"></i><a href="{@url:bbs/cate/run?fid=$fid&tab=digest}">精华</a><!--#}#-->
 		</div>
 		<pw-tpl id="cateTop_segment"/>
 		<div class="main cc">
@@ -21,7 +21,6 @@
 					<template source='widget_forum' load='true' />
 					<pw-tpl id="cate_middle"/>
 					<div class="box_wrap thread_page J_check_wrap">
-						<nav>
 						<div class="content_nav" id="hashpos_ttype">
 							<!--# $_urladd_ = $tab ? '&tab=' . $tab : ''; #-->
 							<div class="content_filter"><a href="{@url:bbs/cate/run?fid=$fid}{$_urladd_}{@$defaultOrderby == 'lastpost' ? '&orderby=postdate' : ''}"  class="{@Pw::isCurrent($orderby == 'postdate')}">最新发帖</a><span>|</span><a href="{@url:bbs/cate/run?fid=$fid}{$_urladd_}{@$defaultOrderby == 'lastpost' ? '' : '&orderby=lastpost'}" class="{@Pw::isCurrent($orderby != 'postdate')}">最后回复</a></div>
@@ -30,7 +29,6 @@
 								<li class="{@Pw::isCurrent('digest' == $tab)}"><a href="{@url:bbs/cate/run?fid=$fid&tab=digest}">精华</a></li>
 							</ul>
 						</div>
-						</nav>
 						<!--# if ($threaddb) { #-->
 						<div class="thread_posts_list">
 							<table width="100%" id="J_posts_list" summary="帖子列表">
@@ -112,7 +110,7 @@
 					</section>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>

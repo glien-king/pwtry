@@ -2,20 +2,19 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/medal.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:medal/index/run}">勋章</a><em>&gt;</em><a href="{@url:medal/index/run}">我的勋章</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:medal/index/run}">勋章</a><i class="fa fa-angle-right"></i><a href="{@url:medal/index/run}">我的勋章</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
 				<div class="main_content">
 					<div class="box_wrap medal_page">
-					<nav>
 						<div class="content_nav">
 							<ul>
 								<li class="current"><a href="{@url:medal/index/run}">我的勋章</a></li>
@@ -23,7 +22,6 @@
 								<li><a href="{@url:medal/index/order}">勋章排行</a></li>
 							</ul>
 						</div>
-					<nav>
 						<div id="J_medal_card_wrap" class="medal_content">
 							<!--# if (!$alreadyAll){
 									$disable = $count < 4 ? 'next_disable' : '';
@@ -58,7 +56,7 @@
 											<!--# } #-->
 										</li>
 									<!--# } #-->
-										
+
 									</ul>
 									</div>
 									<div class="next J_lazyslide_next {$disable}">下一组</div>
@@ -66,8 +64,8 @@
 								<!--# } #-->
 							</div>
 							<!--# } #-->
-					
-			
+
+
 							<!--设置排序时，样式变成 medal_show_sort -->
 							<!--# $count = count($myList_y);
 							if ($count > 0){#-->
@@ -105,7 +103,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>
@@ -155,7 +153,7 @@ Wind.use('jquery', 'global', 'lazySlide', 'ajaxForm', function(){
 			}
 
 			medal_unshow_arr.push(medal_unshow.replace('_CLS', cls).replace(/_ID/g, o.id).replace('_SRC', o.big).replace(/_NAME/g, o.name).replace('_BTN', medal_btn));
-		
+
 		}
 	}
 
@@ -169,24 +167,24 @@ Wind.use('jquery', 'global', 'lazySlide', 'ajaxForm', function(){
 			dis_cls_next : 'next_disable'
 		});
 	},200);
-	
+
 
 	//点击设置排序
 	var medal_show_wrap = $('#J_medal_show_wrap'),
 		medal_show_list = $('#J_medal_show_list');
 	$('#J_show_order_btn').on('click', function(e){
 		e.preventDefault();
-		
+
 		//样式切换
 		medal_show_wrap.addClass('medal_show_sort');
-		
+
 		//备份html
 		medal_show_list.data('clone', medal_show_list.clone());
-		
+
 		var $this = $(this);
-			
+
 		$this.parent().hide().siblings('#J_order_wrap').show();
-		
+
 		//写入拖拽clcas
 		medal_show_list.find('a').addClass('J_medal_order').removeClass('J_medal_card');
 
@@ -196,21 +194,21 @@ Wind.use('jquery', 'global', 'lazySlide', 'ajaxForm', function(){
 				medal_show_list.dragsort({ dragSelector: "a.J_medal_order", placeHolderTemplate: '<li style="position:relative;z-index:1;"><a href="javascript:;" style="height:103px;"></a></li>' });
 			});
 		}
-		
+
 	});
 
 	medal_show_list.on('click', 'a.J_medal_order', function(e){
 		e.preventDefault();
 	});
-	
-	
+
+
 	//提交排序
 	$('#J_medal_order_sub').on('click', function(e){
 		e.preventDefault();
 		$.each(medal_show_list.children('li'), function(i, o){
 			$(o).find('input.J_medal_order').val(i+1);
 		});
-		
+
 		$('#J_medal_order_form').ajaxSubmit({
 			dataType : 'json',
 			success : function(data){
@@ -230,20 +228,20 @@ Wind.use('jquery', 'global', 'lazySlide', 'ajaxForm', function(){
 			}
 		})
 	});
-	
+
 	//取消设置排序
 	$('#J_order_cancl').on('click', function(e){
 		e.preventDefault();
-		
+
 		//样式切换
 		medal_show_wrap.removeClass('medal_show_sort');
-		
+
 		//恢复html
 		medal_show_list.html(medal_show_list.data('clone').html());
-		
+
 		$('#J_order_wrap').hide().siblings(':hidden').show();
 	});
-	
+
 	Wind.js(GV.JS_ROOT+'pages/medal/medal.js?v=' + GV.JS_VERSION);
 });
 

@@ -2,14 +2,14 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/message.css?v={@G:version}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@WindUrlHelper::createUrl('message/message/run')}">消息</a><em>&gt;</em><a href="{@WindUrlHelper::createUrl('message/message/run')}">私信</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@WindUrlHelper::createUrl('message/message/run')}">消息</a><i class="fa fa-angle-right"></i><a href="{@WindUrlHelper::createUrl('message/message/run')}">私信</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>
@@ -92,9 +92,9 @@
 </div>
 <script type="text/javascript">
 Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
-	
+
 	var default_tip = 'Ctrl + Enter 快速发布';
-	
+
 	$('#J_msg_add_form').ajaxForm({
 		dataType : 'json',
 		success : function(data, statusText, xhr, $form) {
@@ -113,25 +113,25 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 			}
 		}
 	});
-	
+
 	//ctrl+enter 提交
 	Wind.Util.ctrlEnterSub($('textarea.J_msg_add_textarea'), $('button.J_msg_add_btn'));
-	
+
 	//下拉
 	var follows_load = false,
 		fans_load = false;
-	
+
 	//获取关注
 	var get_follows = $('#J_get_follows'),					//下拉按钮
 		users_url = get_follows.attr('href'),				//地址
 		users_pop = $('#J_users_pop'),					//下拉用户容器
 		users_wrap = $('#J_users_wrap');					//用户列表
-		
+
 	get_follows.on('click', function(e){
 		e.preventDefault();
 		var $this = $(this);
 		users_pop.toggle();
-		
+
 		if(!follows_load) {
 			$.getJSON(users_url+'&type=follows', function(data){
 				users_wrap.html('<div class="follow_list" id="J_list_follows">我的关注为空</div><div class="follow_list" id="J_list_fans" style="display:none;"><div class="pop_loading"></div></div>');
@@ -142,7 +142,7 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 					$.each(data['data'], function(i, o){
 						li_arr.push('<li><label><input type="checkbox" value="'+ o.username +'">'+ o.username +'</label></li>');
 					});
-					
+
 					list_follows.html('<ul class="">'+ li_arr.join('') +'</ul>');
 
 				}else if(data.state == 'fail'){
@@ -153,7 +153,7 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 			});
 		}
 	});
-	
+
 	//切换关注 粉丝
 	$('#J_users_select').on('change', function(){
 		var $this = $(this),
@@ -169,7 +169,7 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 						$.each(data['data'], function(i, o){
 							li_arr.push('<li><label><input type="checkbox" value="'+ o.username +'">'+ o.username +'</label></li>');
 						});
-						
+
 						if(li_arr.length) {
 							list_fans.html('<ul>'+ li_arr.join('') +'</ul>');
 						}else{
@@ -181,10 +181,10 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 					}
 				});
 			}
-			
+
 		}
 	});
-	
+
 	//选择粉丝关注
 	var user_tag_ul = $('ul.J_user_tag_ul');
 	users_wrap.on('change', 'input:checkbox', function(){
@@ -198,13 +198,13 @@ Wind.use('jquery', 'global', 'ajaxForm', 'validate', function() {
 			input_has.parents('li').remove();
 		}
 	});
-	
+
 	//删除用户标签
 	user_tag_ul.on('click', 'del.J_user_tag_del', function(e){
 		e.preventDefault();
 		users_wrap.find('input[value="'+ $(this).attr('title') +'"]').prop('checked', false);
 	});
-	
+
 	//关闭粉丝关注列表
 	users_pop.on('click', '.J_close_users', function(e){
 		e.preventDefault();
@@ -215,7 +215,7 @@ e.returnValue=false;
 }else{
 e.preventDefault();
 } */
-		
+
 });
 </script>
 </body>

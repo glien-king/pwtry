@@ -31,13 +31,9 @@
  * pw-progress-wrap
  */
 
-.fa {
-    width: 21px;
-    text-align: center;
-}
-
 .pw-article {
     word-wrap: break-word;
+    word-break: break-all;
     i,
     em {
         font-style: italic;
@@ -77,12 +73,16 @@
 }
 
 .pw-breadcrumb {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
-    @include grayhover;
+    @include link-hover(){};
 }
 
 .pw-title {
+    margin-bottom: 10px;
+}
+
+.pw-block-title {
     margin-bottom: 15px;
     border-bottom: 1px solid $border-default;
     padding: 10px 15px;
@@ -108,13 +108,32 @@
     color: $border-default;
 }
 
+.pw-tips {
+    margin-bottom: 15px;
+
+        text-align: center;
+
+        color: $brand-warning;
+}
+
 .pw-info {
-    @include grayhover;
+    @include link-hover;
 }
 
 .pw-intro {
     color: $gray-light;
 }
+
+.pw-dl {
+    dl + dl {
+        margin-top: 15px;
+        border-top: 1px dashed $border-default;
+        padding-top: 15px;
+    }
+}
+
+
+
 
 .pw-left {
     float: left;
@@ -358,127 +377,3 @@
     }
 }
 
-.pw-progress-wrap {
-    margin-top: 10px;
-
-    font-size: 12px;
-    line-height: 14px;
-}
-
-.pw-progress {
-    display: block;
-
-    position: relative;
-
-    margin-top: 5px;
-    width: 100%;
-    height: 4px;
-
-    background-color: #e9ecef;
-    span {
-        display: inline-block;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        height: 4px;
-    }
-}
-
-.pw-progress-1 {
-    background: #4cd964 linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-2 {
-    background: #f06595 linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-3 {
-    background: #5ac8fa linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-4 {
-    background: #37b24d linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-5 {
-    background: #5856d6 linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-6 {
-    background: #be4bdb linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-7 {
-    background: #007aff linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-8 {
-    background: #ff9500 linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-9 {
-    background: #ff3b30 linear-gradient(-45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent) !important;
-    background-size: 40px 40px !important;
-}
-
-.pw-progress-bg {
-    float: left;
-
-    border-radius: 2px;
-    padding: 0 5px;
-    height: 14px;
-
-    color: #fff;
-}
-
-.pw-progress-bg-1 {
-    background-color: #4cd964;
-}
-
-.pw-progress-bg-2 {
-    background-color: #f06595;
-}
-
-.pw-progress-bg-3 {
-    background-color: #5ac8fa;
-}
-
-.pw-progress-bg-4 {
-    background-color: #37b24d;
-}
-
-.pw-progress-bg-5 {
-    background-color: #5856d6;
-}
-
-.pw-progress-bg-6 {
-    background-color: #be4bdb;
-}
-
-.pw-progress-bg-7 {
-    background-color: #007aff;
-}
-
-.pw-progress-bg-8 {
-    background-color: #ff9500;
-}
-
-.pw-progress-bg-9 {
-    background-color: #ff3b30;
-}
-
-.pw-progress-percent {
-    float: left;
-
-    padding: 0 5px;
-}

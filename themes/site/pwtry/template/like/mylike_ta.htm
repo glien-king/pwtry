@@ -2,15 +2,15 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/like.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body class="like_body">
 <pw-start/>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:like/like/run}">喜欢</a><em>&gt;</em><a href="{@url:ike/mylike/ta}">Ta的喜欢</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:like/like/run}">喜欢</a><i class="fa fa-angle-right"></i><a href="{@url:ike/mylike/ta}">Ta的喜欢</a>
 		</div>
 		<div class="like_page_ta cc">
 			<div class="like_nav cc">
@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 			<div class="like_falls cc" id="container" style="width:960px;">
-				
+
 			</div>
 			<div class="loading" id="J_loading"><span>加载中...</span></div>
 			<!-- <div class="dn" id="J_page">这里是分页信息</div> -->
@@ -33,7 +33,7 @@
 var J_LIKE_URL = "{@url:like/mylike/data}";
 var LIKE_PLUS = "{@url:like/mylike/doLike?typeid=_FROMTYPE&fromid=_KEY}";		//点击喜欢地址
 var J_LIKE_DATA = "{@$data|json}";
-		
+
 Wind.use('jquery', 'global', function(){
 	Wind.js(GV.JS_ROOT +"util_libs/masonry.js?v="+ GV.JS_VERSION, GV.JS_ROOT +"pages/mylike/like_index.js?v="+ GV.JS_VERSION, GV.JS_ROOT+ 'pages/common/likePlus.js?v='+ GV.JS_VERSION, function(){
 		//Ta的喜欢模板
@@ -88,8 +88,8 @@ Wind.use('jquery', 'global', function(){
 						//这里当图片异常的时候会导致延迟显示
                         html.imagesLoaded(function(){
 							$("#J_loading").hide();
-							
-							
+
+
 							$("#container").append(html).masonry('appended', html, true);
 							html.animate({"opacity": 1},800);
 
@@ -103,7 +103,7 @@ Wind.use('jquery', 'global', function(){
 					$("#J_loading").hide();
 				}
 			});
-			fall.init();	
+			fall.init();
 	})
 });
 

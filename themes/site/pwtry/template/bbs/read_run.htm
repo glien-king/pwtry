@@ -2,8 +2,8 @@
 <html>
 <head>
 	<template source='TPL:common.head' load='true' />
-	<link href="{@theme:css}/forum.css?v={@NEXT_RELEASE}" rel="stylesheet" />
-	<link href="{@G:url.css}/editor_content.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
+	<link rel="stylesheet" href="{@G:url.css}/editor_content.css?v={@NEXT_RELEASE}">
 <style>
 .aPre{
 	cursor:url({@theme:images}/common/pre.cur),auto;
@@ -19,12 +19,10 @@
 	<template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
 			{@$headguide|html}
 		</div>
 		<pw-tpl id="first_segment"/>
-		<div id="app_test"></div>
-		<div id="cloudwind_read_top"></div>
 		<div class="read_pages_wrap cc">
 			<!--# if($showReply){ #-->
 			<a rel="nofollow" href="{@url:bbs/post/reply?tid=$tid}" data-referer="true" class="btn_replay{$replyNeedLogin}">回复</a>
@@ -64,7 +62,6 @@
 			<!--# foreach ($readdb as $key => $read) { #-->
 			<a name="{$read['pid']}"></a><!--# if ($read['lou'] == $count-1) { #--><a name="a"></a><!--# } #-->
 			<template source='read_floor' load='true' />
-			<advertisement id='Read.Layer.TidAmong' sys='1'/>
 			<!--# } #-->
 			<page tpl="TPL:common.page_vertical" page="$page" per="$perpage" count="$count" total="$totalpage" url="bbs/read/run?tid=$tid&fid=$fid" args="$urlargs"/>
 			<div class="read_pages_wrap cc" id="floor_reply">
@@ -76,7 +73,7 @@
 				<div class="J_page_wrap" data-key="true">
 				<div class="pages" style="margin-right:3px;"><a href="{@url:bbs/thread/run?fid=$pwforum->fid&page=$fpage}" class="pages_pre" rel="nofollow">&laquo; 返回列表</a></div>
 				<page tpl="TPL:common.page" page="$page" per="$perpage" count="$count" total="$totalpage" url="bbs/read/run?tid=$tid&fid=$fid" args="$urlargs"/>
-				
+
 				</div>
 			</div>
 			<div style="display:none;" class="btn_post_menu" id="J_read_post_types">
@@ -122,7 +119,6 @@
 			<!--快速回复结束-->
 			<!--# } #-->
 			<pw-tpl id="read_bottom"/>
-			<div id="cloudwind_read_bottom"></div>
 		</div>
 		<!--# if ($operateReply) { #-->
 		<div id="J_post_manage_main" class="core_pop_wrap J_post_manage_pop" style="display:none;position:fixed;_position:absolute;">

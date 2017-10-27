@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' suffix='htm' />
-<link href="{@theme:css}/register.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
@@ -62,7 +62,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 
 	var reset_password = $('#J_reset_password'),
 			reset_pwd_tip_password = $('#J_reset_pwd_tip_password');
-	
+
 	$("#J_reset_pwd_form").validate({
 		errorPlacement: function(error, element) {
 			//错误提示容器
@@ -119,9 +119,9 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 
 			if(name == 'password') {
 				//密码则添加强度验证
-				
+
 				$(element).on('keyup', function(e){
-					
+
 					//过滤tab键
 					if(e.keyCode !== 9) {
 						$.post('{@url:u/register/checkpwdStrong}', {
@@ -134,7 +134,7 @@ Wind.use('jquery', 'global', 'validate', 'ajaxForm', function(){
 							}
 						}, 'json');
 					}
-					
+
 				});
 			}
 		},

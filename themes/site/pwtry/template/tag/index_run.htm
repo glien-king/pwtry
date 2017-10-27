@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/tag.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,8 +10,8 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:tag/index/run}">话题</a><em>&gt;</em><a href="{@url:tag/index/run}">热门话题</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/run}">话题</a><i class="fa fa-angle-right"></i><a href="{@url:tag/index/run}">热门话题</a>
 		</div>
 		<div class="tag_page_run cc">
 			<div class="tag_nav">
@@ -32,7 +32,7 @@
 					<span class="user">最新关注会员</span>
 				</div>
 				<div class="ct" id="J_tag_hotlist_ct">
-				<!--# foreach ($hotTags as $v) { 
+				<!--# foreach ($hotTags as $v) {
 					$number = ceil(0.7 * $v['content_count'] + 0.3 * $v['attention_count']);
 					$stylewidth = 10 * $number;
 					$stylewidth = $stylewidth > 240 ? 240 : $stylewidth;
@@ -52,7 +52,7 @@
 							<!--#}#-->
 						</dt>
 						<dd>
-						<!--# foreach ($v['attentions'] as $uv) { 
+						<!--# foreach ($v['attentions'] as $uv) {
 						#-->
 							<a class="J_user_card_show" data-uid="{$uv}" href="{@url:space/index/run?uid=$uv}"><img class="J_avatar" src="{@Pw::getAvatar($uv, 'small')}" data-type="small" width="40" height="40" alt="" /></a>
 						<!--# } #-->
@@ -65,8 +65,6 @@
 				<!--# } #-->
 			</div>
 			<!--结束-->
-			<div class="tac"><advertisement id='Common.Topic.Top' sys='1'/></div>
-			
 		</div>
 	</div>
 <template source='TPL:common.footer' load='true' />
@@ -86,7 +84,7 @@ Wind.use('jquery', 'global', function(){
 			return;
 		}
 		lock = true;
-		
+
 		var $this = $(this),
 			type = $this.data('type'),
 			id = $this.data('id'),
@@ -127,8 +125,8 @@ Wind.use('jquery', 'global', function(){
 			$(this).removeClass('current');
 		});
 	}
-	
-	
+
+
 	Wind.use(GV.JS_ROOT +'pages/tag/tag_index.js?v=' + GV.JS_VERSION);
 });
 </script>

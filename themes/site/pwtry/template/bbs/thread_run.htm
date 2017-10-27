@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/forum.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,25 +10,22 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb" id="bread_crumb">
-			{@$headguide|html}<!--# if ($tab == 'digest') { #--><em>&gt;</em><a href="{@url:bbs/thread/run?fid=$fid&tab=digest}">精华</a><!--# } #-->
-			<!--# if ($type) { #--><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			{@$headguide|html}<!--# if ($tab == 'digest') { #--><i class="fa fa-angle-right"></i><a href="{@url:bbs/thread/run?fid=$fid&tab=digest}">精华</a><!--# } #-->
+			<!--# if ($type) { #--><i class="fa fa-angle-right"></i>
 				<!--# $_urladd_ = $tab ? '&tab=' . $tab : ''; #-->
 				<!--# if ($_parentid = $topictypes['all_types'][$type]['parentid']) { #-->
-			<a href="{@url:bbs/thread/run?fid=$fid&type=$_parentid}{$_urladd_}">{$topictypes['all_types'][$_parentid]['name']|html}</a><em>&gt;</em>
+			<a href="{@url:bbs/thread/run?fid=$fid&type=$_parentid}{$_urladd_}">{$topictypes['all_types'][$_parentid]['name']|html}</a><i class="fa fa-angle-right"></i>
 				<!--# } #-->
 			<a href="{@url:bbs/thread/run?fid=$fid&type=$type}{$_urladd_}">{$topictypes['all_types'][$type]['name']|html}</a>
 			<!--# } #-->
 		</div>
 		<pw-tpl id="threadTop_segment"/>
 		<div class="main cc">
-			<div id="cloudwind_thread_top"></div>
 			<div class="main_body">
 				<div class="main_content">
 					<pw-tpl id="first_segment"/>
 					<template source='widget_forum' load='true' />
-					<div id="cloudwind_threadleft_content"></div>
-					<advertisement id='Thread.Top' sys='1'/>
 					<pw-tpl id="thread_middle"/>
 					<div class="pages_wrap cc">
 						<a href="{@url:bbs/post/run?fid=$pwforum->fid}" class="btn_post J_thread_post_btn{$postNeedLogin}" data-rel="J_thread_post_types_1">发帖</a>
@@ -44,7 +41,6 @@
 						</ul>
 					</div>
 					<div class="box_wrap thread_page J_check_wrap">
-						<nav>
 							<div class="content_nav">
 								<!--#
 								$_urladd_ = rtrim('&' . http_build_query(array('type' => $type, 'tab' => $tab)), '&');
@@ -90,7 +86,6 @@
 								</ul>
 							</div>
 							<!--# } #-->
-						</nav>
 						<!--# if ($threaddb) { #-->
 						<div class="thread_posts_list">
 							<table width="100%" id="J_posts_list" summary="帖子列表">
@@ -103,7 +98,7 @@
 							<!--# if ($operateThread) { #-->
 							<div class="management J_post_manage_col" data-role="list">
 								<label class="mr5"><input class="J_check_all" type="checkbox">全选</label>
-								<!--# 
+								<!--#
 									$hasFirstPart = $operateThread['topped'] || $operateThread['digest'] || $operateThread['highlight'] || $operateThread['up'];
 									$hasSecondPart = $operateThread['type'] || $operateThread['move'] || $operateThread['copy'] || $operateThread['unite'];
 									$hasThirdPart = $operateThread['lock'] || $operateThread['down'];
@@ -151,15 +146,12 @@
 						</ul>
 					</div>
 					<pw-tpl id="thread_bottom"/>
-					<advertisement id='Thread.Btm' sys='1'/>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
-				<div id="cloudwind_threadright_content"></div>
 			</div>
 		</div>
-		<div id="cloudwind_thread_bottom"></div>
 	</div>
 <!--# if ($operateThread){ #-->
 	<div id="J_post_manage_main" class="core_pop_wrap J_post_manage_pop" style="display:none;position:fixed;_position:absolute;">
@@ -261,7 +253,7 @@ Wind.use('jquery', 'global', function(){
 				});
 			}
 			lock = false;
-			
+
 		}, 'json');
 	});
 <!--# } #-->

@@ -76,11 +76,7 @@
     background-size: 40px 40px !important;
 }
 
-.progress-percent {
-    float: left;
 
-    padding: 0 5px;
-}
 
 .progress-bg {
     float: left;
@@ -130,4 +126,10 @@
 
 .progress-bg-10 {
     background-color: $color-9;
+}
+
+.progress-percent {
+    float: left;
+
+    padding: 0 5px;
 }

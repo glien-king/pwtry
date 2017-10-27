@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/style.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body {@$space->space['backbround']|html}>
 <div class="wrap">
@@ -132,13 +132,13 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 		e.preventDefault();
 		var $this = $(this), user = $this.data('user');
 		reply_textarea.val('@'+ user +'：').focus();
-		
+
 	});
 
 	reply_textarea.on('focus', function(){
 		//回复框聚焦后高度自适应
 		var $this = $(this), _this = this;
-		
+
 		$this.on('keydown keyup', function(){
 			var height,
 				sc_height = $.browser.msie ? _this.scrollHeight -8 : _this.scrollHeight,		//ie 减去padding值
@@ -158,7 +158,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 				}
 
 				this_style.height = height  + 'px';
-		
+
 			}
 
 		});
@@ -186,11 +186,11 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 					//超过十条则删除最底下的一条
 					reply_list.last().remove();
 				}
-				
+
 				//写入最新回复到顶部
 				reply_wrap.prepend(data);
 				reply_textarea.val('');
-				
+
 				//统计+1
 				var reply_count = $('#J_reply_count'),
 						c = parseInt(reply_count.text());
@@ -206,7 +206,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 		e.preventDefault();
 		var $this = $(this),
 			content = $('#'+ $this.data('id'));
-		
+
 		if($this.data('dir') === 'down') {
 			if(lock) {
 				return false;
@@ -234,7 +234,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 			content.show().siblings('.J_content_all').hide().empty();
 			$this.text('阅读全部↓').data('dir', 'down');
 		}
-		
+
 	});
 
 });

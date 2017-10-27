@@ -2,21 +2,21 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/invite.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em>
-			<a href="{@url:my/invite/run}">邀请好友</a><em>&gt;</em>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i>
+			<a href="{@url:my/invite/run}">邀请好友</a><i class="fa fa-angle-right"></i>
 			<a href="{@url:my/invite/statistics}">邀请统计</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
 				<div class="main_content cc">
-					<div class="box_wrap invite_page">		
+					<div class="box_wrap invite_page">
 						<template source="TPL:bbs.mine_tab" load='true'  />
 		<!--邀请统计-->
 						<div class="content_type">
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_1' load='true' />
 			</div>
 		</div>

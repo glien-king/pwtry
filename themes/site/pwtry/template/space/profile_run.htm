@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/style.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body {@$space->space['backbround']|html}>
 <div class="wrap">
@@ -39,19 +39,19 @@
 						<dt>星座</dt>
 						<dd>{$constellation}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<!--# if ($space->allowView('local')){ #-->
 					<dl class="cc">
 						<dt>现居住地</dt>
 						<dd>{$space->spaceUser['location_text']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<!--# if ($space->allowView('nation')){ #-->
 					<dl class="cc">
 						<dt>家乡</dt>
 						<dd>{$space->spaceUser['hometown_text']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<dl class="cc">
 						<dt>个人主页</dt>
 						<dd>{$space->spaceUser['homepage']}</dd>
@@ -73,36 +73,36 @@
 					<!--# } #-->
 						<strong>联系方式</strong>
 					</h3>
-				
+
 					<!--# if ($space->allowView('aliwangwang')){ #-->
 					<dl class="cc">
 						<dt>阿里旺旺</dt>
 						<dd>{$space->spaceUser['aliww']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<!--# if ($space->allowView('qq')){ #-->
 					<dl class="cc">
 						<dt>QQ</dt>
 						<dd>{$space->spaceUser['qq']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<!--# if ($space->allowView('msn')){ #-->
 					<dl class="cc">
 						<dt>MSN</dt>
 						<dd>{$space->spaceUser['msn']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 					<!--# if ($space->allowView('mobile')){ #-->
 					<dl class="cc">
 						<dt>手机号码</dt>
 						<dd>{$space->spaceUser['mobile']}</dd>
 					</dl>
-					<!--# } #-->	
+					<!--# } #-->
 				</div>
-			<!--# } #-->	
+			<!--# } #-->
 				<hook name="space_profile" args="array($space)" />
 			</div>
-			
+
 		</div>
 		<div class="space_sidebar">
 			<template source='TPL:space.common.sidebar' load='true' />

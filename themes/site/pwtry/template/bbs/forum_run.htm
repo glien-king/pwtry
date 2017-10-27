@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/forum.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <pw-start/>
@@ -10,17 +10,14 @@
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<pw-tpl id="main_segment"/>
-		<div class="bread_crumb" id="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:bbs/forum/run}">本站新帖</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:bbs/forum/run}">本站新帖</a>
 		</div>
-		<div id="cloudwind_forum_top"></div>
 		<div class="main cc">
 			<div class="main_body">
 				<div class="main_content cc">
 					<pw-tpl id="first_segment"/>
-					<advertisement id='Thread.Top' sys='1'/>
 					<div class="box_wrap thread_page J_check_wrap">
-						<nav>
 							<div class="content_nav" id="hashpos_ttype">
 								<div class="content_filter">
 									<a href="{@url:bbs/forum/run?order=postdate}" class="{@Pw::isCurrent($order == 'postdate')}">最新发帖</a><span>|</span><a href="{@url:bbs/forum/run?order=lastpost}" class="{@Pw::isCurrent($order != 'postdate')}">最后回复</a></div>
@@ -29,7 +26,6 @@
 									<!--# if ($loginUser->isExists()) { #--><li><a rel="nofollow" href="{@url:bbs/forum/my}">我的版块</a></li><!--# } #-->
 								</ul>
 							</div>
-						</nav>
 						<!--公告-->
 						<component tpl='TPL:announce.announce' class='SRV:announce.srv.PwAnnounceService' method='getAnnounceForBbsScroll' args='array()'/>
 						<!--公告结束-->
@@ -115,16 +111,14 @@
 						</div>
 					</div>
 					<!--# } #-->
-					<advertisement id='Thread.Btm' sys='1'/>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>
-		<div id="cloudwind_forum_bottom"></div>
 	</div>
-	
+
 <template source='TPL:common.footer' load='true' />
 </div>
 

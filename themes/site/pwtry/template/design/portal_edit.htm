@@ -2,13 +2,13 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@G:url.css}/portal.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
 			{@$headguide|html}
 		</div>
 		<div class="cc">
@@ -19,11 +19,11 @@
 				<div class="box">
 					<dl class="cc">
 						<dt>页面标题：</dt>
-						<dd><span class="must_red">*</span><input type="text" class="input length_5" name="title" value="{$portal['title']}"></dd>
+						<dd><input type="text" class="input length_5" name="title" value="{$portal['title']}"></dd>
 					</dl>
 					<dl class="cc">
 						<dt>静态化名称：</dt>
-						<dd><span class="must_red">*</span><input type="text" class="input length_5" name="pagename" value="{$portal['pagename']}"></dd>
+						<dd><input type="text" class="input length_5" name="pagename" value="{$portal['pagename']}"></dd>
 						<dd class="dd_r">不能重复，用于专题静态化时显示在链接中的个性化名称，只能为字母，数字和下划线。</dd>
 					</dl>
 					<dl class="cc">
@@ -42,7 +42,7 @@
 						<dt>封面：</dt>
 						<dd>
 							<div class="mb10"><label class="mr20"><input class="J_coverfrom" data-role="web" type="radio" name="coverfrom" value="1" checked>网络图片</label><label class="mr20"><input class="J_coverfrom" data-role="local" type="radio" name="coverfrom" value="2">本地上传</label></div>
-							<div id="J_coverfrom_web" class="J_coverfrom_items"><input type="text" class="input length_5" name="webcover" value="{$portal['cover']}"><p class="gray">以http://开头</p></div> 
+							<div id="J_coverfrom_web" class="J_coverfrom_items"><input type="text" class="input length_5" name="webcover" value="{$portal['cover']}"><p class="gray">以http://开头</p></div>
 							<div id="J_coverfrom_local" class="J_coverfrom_items" style="display:none;">
 								<div class="single_image_up">
 									<a href="">上传图片</a>

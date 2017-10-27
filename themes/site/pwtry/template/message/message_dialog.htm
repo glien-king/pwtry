@@ -2,14 +2,14 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/message.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
-			<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:message/message/run}">消息</a>
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+			<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:message/message/run}">消息</a>
 		</div>
 		<div class="main cc">
 			<div class="main_body">
@@ -18,9 +18,9 @@
 						<template source='TPL:message.message_header' load='true' />
 						<div class="message_list">
 							<div class="hd cc">
-									<!--# $dialogUsername = $dialog['last_message']['from_uid'] == $dialog['to_uid'] ? 
+									<!--# $dialogUsername = $dialog['last_message']['from_uid'] == $dialog['to_uid'] ?
 												$dialog['last_message']['to_username'] : $dialog['last_message']['from_username'];//对话人
-											$dialogUserid = $dialog['last_message']['from_uid'] == $dialog['to_uid'] ? 
+											$dialogUserid = $dialog['last_message']['from_uid'] == $dialog['to_uid'] ?
 												$dialog['last_message']['to_uid'] : $dialog['last_message']['from_uid'];
 												$blackList = Wekit::load('user.PwUserBlack')->getBlacklist($loginUser->uid);
 												if ($blackList) {
@@ -48,11 +48,11 @@
 								</form>
 							</dd>
 						</dl>
-						<!--# if ($messages) { 
+						<!--# if ($messages) {
 							Wind::import('LIB:ubb.PwUbbCode');
 						#-->
 						<div class="message_dialogue" id="J_posts_list">
-							<!--# foreach ($messages as $value) { 
+							<!--# foreach ($messages as $value) {
 								$value['tousername'] = $value['from_uid'] == $dialog['to_uid'] ? '我' : $dialogUsername;
 								$bubbles = $value['from_uid'] == $dialog['to_uid'] ? ' my' : '';
 								$value['content'] = PwUbbCode::parseEmotion($value['content']);
@@ -80,7 +80,7 @@
 					<page tpl='TPL:common.page' page='$page' count='$count' per='$perpage' url='message/message/dialog' args='$args'/>
 				</div>
 			</div>
-			<div class="main_sidebar">
+			<div class="col-right"><div class="sidebar-box"></div>
 				<template source='TPL:common.sidebar_2' load='true' />
 			</div>
 		</div>
@@ -91,14 +91,14 @@
 Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'validate', function(){
 	var msg_send_ta = $('#J_msg_send_ta'),
 		msg_send_btn = $('#J_msg_send_btn');
-	
+
 	//初始化空内容
 	msg_send_ta.val('');
-	
+
 	//按钮状态&ctrl+enter提交方法
 	Wind.Util.buttonStatus(msg_send_ta, msg_send_btn);
 	Wind.Util.ctrlEnterSub(msg_send_ta, msg_send_btn);
-	
+
 	//提交发送
 	$('#J_msg_send_form').ajaxForm({
 		dataType : 'json',
@@ -113,7 +113,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'validate', function(){
 			}
 		}
 	});
-	
+
 	//删除 黑名单
 	if( $('a.J_ajax_confirm').length ) {
 
@@ -133,7 +133,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'validate', function(){
 						});
 					}
 				});
-				
+
 			});
 	}
 
@@ -187,7 +187,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'validate', function(){
 			$(this).removeClass('current ');
 		});
 	}
-	
+
 	Wind.js(GV.JS_ROOT +'pages/message/message_index.js?v=' + GV.JS_VERSION);
 });
 </script>

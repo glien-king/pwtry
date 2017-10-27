@@ -1,4 +1,4 @@
-@mixin grayhover {
+@mixin link-hover {
     color: $gray-base;
     a {
         color: $gray-base;
@@ -6,19 +6,4 @@
             color: $brand-primary;
         }
     }
-}
-
-@mixin margin5() {
-    margin-right: -5px;
-    margin-left: -5px;
-}
-
-@mixin margin10() {
-    margin-right: -10px;
-    margin-left: -10px;
-}
-
-@mixin margin15() {
-    margin-right: -15px;
-    margin-left: -15px;
 }

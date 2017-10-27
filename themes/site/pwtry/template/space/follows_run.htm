@@ -2,7 +2,7 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@theme:css}/style.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body {@$space->space['backbround']|html}>
 <div class="wrap">
@@ -57,9 +57,9 @@
 				<!--# } else { #-->
 				<form action="{@url:my/follow/batchadd}" method="post" id="J_nofollow_form">
 					<!--无关注人时-->
-					
+
 					<!--#if ($space->tome == 2) {#-->
-					
+
 						<!--#if($recommend){#-->
 							<div class="nofollow_list J_check_wrap">
 								<div class="hd">啊哦，你还没有关注任何人，赶紧先关注些人！</div>
@@ -76,15 +76,15 @@
 						<!--#} else {#-->
 							<div class="not_content">啊哦，你还没有关注任何人，赶紧先关注些人！</div>
 						<!--#}#-->
-						
+
 					<!--#} else {#-->
 						<div class="not_content">啊哦，Ta还没有关注任何人！</div>
 					<!--#}#-->
-					
-					
-					<!--无关注人时结束-->	
+
+
+					<!--无关注人时结束-->
 				</form>
-				<!--# } #-->	
+				<!--# } #-->
 				</div>
 			</div>
 
@@ -141,7 +141,7 @@ Wind.use('jquery', 'global', 'dialog', 'ajaxForm', 'tabs', 'draggable', 'uploadP
 					msg : data.message[0]
 				});
 			}
-			
+
 		}, 'json').fail(function(){
 			lock = false;
 		});

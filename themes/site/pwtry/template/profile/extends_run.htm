@@ -2,18 +2,18 @@
 <html>
 <head>
 	<template source='TPL:common.head' load='true' />
-	<link href="{@theme:css}/profile.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 	<template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
 		<div class="cc">
-			<div class="bread_crumb">
-				<a href="{@url:}" class="home" title="{@C:site.info.name}">首页</a><em>&gt;</em><a href="{@url:profile/index/run}">设置</a>
-				<em>&gt;</em><a href="{@url:profile/index/run?_left=$_left}">{$_menus[$_left]['title']}</a>
+			<div class="pw-breadcrumb"><i class="fa fa-home"></i>
+				<a href="{@url:}" title="{@C:site.info.name}">首页</a><i class="fa fa-angle-right"></i><a href="{@url:profile/index/run}">设置</a>
+				<i class="fa fa-angle-right"></i><a href="{@url:profile/index/run?_left=$_left}">{$_menus[$_left]['title']}</a>
 <!--#if ($_tab && $_menus[$_left]['tabs'][$_tab]) {#-->
-				<em>&gt;</em><a href="{@url:profile/index/run?_left=$_left&_tab=$_tab}">{$_menus[$_left]['tabs'][$_tab]['title']}</a>
+				<i class="fa fa-angle-right"></i><a href="{@url:profile/index/run?_left=$_left&_tab=$_tab}">{$_menus[$_left]['tabs'][$_tab]['title']}</a>
 <!--#}#-->
 			</div>
 			<div class="cc profile_page">

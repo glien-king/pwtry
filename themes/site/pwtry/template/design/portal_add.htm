@@ -2,13 +2,13 @@
 <html>
 <head>
 <template source='TPL:common.head' load='true' />
-<link href="{@G:url.css}/portal.css?v={@NEXT_RELEASE}" rel="stylesheet" />
+
 </head>
 <body>
 <div class="wrap">
 <template source='TPL:common.header' load='true' />
 	<div class="main_wrap">
-		<div class="bread_crumb">
+		<div class="pw-breadcrumb"><i class="fa fa-home"></i>
 			{@$headguide|html}
 		</div>
 		<div class="cc">
@@ -19,11 +19,11 @@
 				<div class="box">
 					<dl class="cc">
 						<dt>页面标题：</dt>
-						<dd><span class="must_red">*</span><input type="text" class="input length_5" name="title"></dd>
+						<dd><input type="text" class="input length_5" name="title"></dd>
 					</dl>
 					<dl class="cc">
 						<dt>静态化名称：</dt>
-						<dd><span class="must_red">*</span><input type="text" class="input length_5" name="pagename"></dd>
+						<dd><input type="text" class="input length_5" name="pagename"></dd>
 						<dd class="dd_r">不能重复，用于专题静态化时显示在链接中的个性化名称，只能为字母，数字和下划线。</dd>
 					</dl>
 					<dl class="cc">
@@ -124,7 +124,7 @@ Wind.use('jquery', 'global', 'ajaxForm', function(){
 			if(data.state == 'success') {
 				$('<span class="tips_icon_success">' + data.message + '</span>' ).insertAfter(protal_add_btn).fadeIn('slow').delay(1000).fadeOut(function() {
 					$(this).remove();
-					
+
 					if(data.referer) {
 						location.href = decodeURIComponent(data.referer);
 					}
